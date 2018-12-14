@@ -1,4 +1,0 @@
-admin@hospitals.ua, 1111
-manager.jh@hospitals.ua, 1111
-doctor.gh@hospitals.ua, 1111
-patient.cd@hospitals.ua, 1111
