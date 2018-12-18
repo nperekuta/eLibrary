@@ -25,13 +25,6 @@ public class ThesisPage {
     @FindAll(@FindBy(xpath = "/html/body/section/div[1]/div/table/tbody/tr"))
     public List<WebElement> allThesis;
 
-    public void clearAllFilters() {
-        themeFilter.clear();
-        authorFilter.clear();
-        nameFilter.clear();
-        dateFilter.click();
-    }
-
     public static ThesisPage init(WebDriver driver) {
         return PageFactory.initElements(driver, ThesisPage.class);
     }
