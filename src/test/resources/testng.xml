@@ -1,32 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestHospitalSeeker" verbose="1">
-    <listeners>
-        <listener class-name="hospitalSeeker.tools.Listener"/>
-    </listeners>
-    <test name="hospitalSeeker.roles">
+<suite name="eLibrary" verbose="1">
+    <test name="elibrary.pages">
         <classes>
-            <class name="hospitalSeeker.roles.TestAdminRole"/>
-            <class name="hospitalSeeker.roles.TestUnregisteredUser"/>
-            <class name="hospitalSeeker.roles.TestManagerRole"/>
-            <class name="hospitalSeeker.roles.TestDoctorRole"/>
-            <class name="hospitalSeeker.roles.TestPatientRole"/>
-        </classes>
-    </test>
-    <test name="hospitalSeeker.pages">
-        <classes>
-            <class name="hospitalSeeker.pages.TestAdminPage"/>
-            <class name="hospitalSeeker.pages.TestLoginPage"/>
-            <class name="hospitalSeeker.pages.TestCardPage"/>
-            <class name="hospitalSeeker.pages.TestRegisterPage"/>
-            <class name="hospitalSeeker.pages.TestSchedulePage"/>
-        </classes>
-    </test>
-    <test name="hospitalSeeker.googleAPI">
-        <classes>
-            <class name="hospitalSeeker.googleAPI.TestFindHospitalPage"/>
-            <class name="hospitalSeeker.googleAPI.TestNewHospitalPage"/>
-            <class name="hospitalSeeker.googleAPI.TestGooglePoiPage"/>
+            <class name="elibrary.featureTests.AdminPageTest"/>
+            <class name="elibrary.featureTests.LoginPageTest"/>
+            <class name="elibrary.featureTests.ThesisPageTest"/>
+            <class name="elibrary.featureTests.RegisterPageTest"/>
+            <class name="elibrary.featureTests.AdminThesisPageTest"/>
         </classes>
     </test>
 </suite>

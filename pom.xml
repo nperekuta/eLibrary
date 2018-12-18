@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>hospitalSeekerTest</groupId>
@@ -106,110 +106,6 @@
                 <driver.path>${browser.drivers.path}/IEDriver.exe</driver.path>
             </properties>
         </profile>
-        <profile>
-            <id>jmeter</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.lazerycode.jmeter</groupId>
-                        <artifactId>jmeter-maven-plugin</artifactId>
-                        <version>${jmeter.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>jmeter-tests</id>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>jmeter</goal>
-                                </goals>
-                                <configuration>
-                                    <resultsDirectory>${jmeter.jtl.folder}</resultsDirectory>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>de.codecentric</groupId>
-                        <artifactId>jmeter-graph-maven-plugin</artifactId>
-                        <version>${jmeter.graphs.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>100</id>
-                                <goals>
-                                    <goal>create-graph</goal>
-                                </goals>
-                                <phase>test</phase>
-                                <configuration>
-                                    <inputFile>${jmeter.jtl.folder}*-login-100.jtl</inputFile>
-                                    <graphs>
-                                        <graph>
-                                            <pluginType>ResponseTimesOverTime</pluginType>
-                                            <width>800</width>
-                                            <height>600</height>
-                                            <outputFile>${jmeter.jtl.folder}login-100.png</outputFile>
-                                        </graph>
-                                    </graphs>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>500</id>
-                                <goals>
-                                    <goal>create-graph</goal>
-                                </goals>
-                                <phase>test</phase>
-                                <configuration>
-                                    <inputFile>${jmeter.jtl.folder}*-login-500.jtl</inputFile>
-                                    <graphs>
-                                        <graph>
-                                            <pluginType>ResponseTimesOverTime</pluginType>
-                                            <width>800</width>
-                                            <height>600</height>
-                                            <outputFile>${jmeter.jtl.folder}login-500.png</outputFile>
-                                        </graph>
-                                    </graphs>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>2</id>
-                                <goals>
-                                    <goal>create-graph</goal>
-                                </goals>
-                                <phase>test</phase>
-                                <configuration>
-                                    <inputFile>${jmeter.jtl.folder}*-register.jtl</inputFile>
-                                    <graphs>
-                                        <graph>
-                                            <pluginType>ResponseTimesOverTime</pluginType>
-                                            <width>800</width>
-                                            <height>600</height>
-                                            <outputFile>${jmeter.jtl.folder}register.png</outputFile>
-                                        </graph>
-                                    </graphs>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>3</id>
-                                <goals>
-                                    <goal>create-graph</goal>
-                                </goals>
-                                <phase>test</phase>
-                                <configuration>
-                                    <inputFile>${jmeter.jtl.folder}*-find_hospital.jtl</inputFile>
-                                    <graphs>
-                                        <graph>
-                                            <pluginType>ResponseTimesOverTime</pluginType>
-                                            <width>800</width>
-                                            <height>600</height>
-                                            <outputFile>${jmeter.jtl.folder}find_hospital.png</outputFile>
-                                        </graph>
-                                    </graphs>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
     <build>
         <resources>
             <resource>
